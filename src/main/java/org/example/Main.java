@@ -1,38 +1,34 @@
 package org.example;
 
+import org.example.enums.Constants;
+
 public class Main {
     public static void main(String[] args) {
 
         Menu menu = new Menu();
         Triangle triangle = new Triangle();
 
-        Print.getTitle();
-        triangle.setParam();
+        menu.getTitle();
 
-        Print.getTitle();
-        Print.side(triangle);
+        triangle.setFirstSide(menu.getSetSide(Constants.SET_FIRST_SIDE));
+        triangle.setSecondSide(menu.getSetSide(Constants.SET_SECOND_SIDE));
+        triangle.setThirdSide(menu.getSetSide(Constants.SET_THIRD_SIDE));
 
-        System.out.println();
-        triangle.getBisector();
-        triangle.reset();
+        menu.getTitle();
+        System.out.println(triangle);
+        System.out.println(triangle.getBisector());
 
+        while (!menu.getChoice()) {
+            menu.getTitle();
+            triangle.reset();
 
-        for (;;){
-            System.out.println();
-            Print.menu(menu);
+            triangle.setFirstSide(menu.getSetSide(Constants.SET_FIRST_SIDE));
+            triangle.setSecondSide(menu.getSetSide(Constants.SET_SECOND_SIDE));
+            triangle.setThirdSide(menu.getSetSide(Constants.SET_THIRD_SIDE));
 
-            if (Menu.getChoice() == 2) {
-                break;
-            }
-
-            Print.getTitle();
-            triangle.setParam();
-
-            Print.getTitle();
-            Print.side(triangle);
-
-            System.out.println();
-            triangle.getBisector();
+            menu.getTitle();
+            System.out.println(triangle);
+            System.out.println(triangle.getBisector());
         }
     }
 
