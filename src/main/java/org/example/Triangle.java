@@ -2,11 +2,14 @@ package org.example;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @NoArgsConstructor
 public class Triangle {
+    @Setter
     private int firstSide;
+    @Setter
     private int secondSide;
     private int thirdSide;
     private boolean isTriangle;
@@ -56,12 +59,6 @@ public class Triangle {
         }
     }
 
-    public void setFirstSide(int firstSide) {
-        this.firstSide = firstSide;
-    }
-    public void setSecondSide(int secondSide) {
-        this.secondSide = secondSide;
-    }
     public void setThirdSide(int thirdSide) {
         this.thirdSide = thirdSide;
 

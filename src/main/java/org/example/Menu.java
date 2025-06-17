@@ -22,9 +22,8 @@ public class Menu{
         Scanner scanner = new Scanner(System.in);
 
         System.out.print(output);
-        int intValue = scanner.nextInt();
 
-        return intValue;
+        return scanner.nextInt();
     }
 
     public boolean getChoice(){
@@ -69,10 +68,10 @@ public class Menu{
     }
 
     private void print(String output, Position position) {
-        if (position.toString() == "LEFT") {
+        if (position.toString().equals("LEFT")) {
             left(output);
         }
-        if (position.toString() == "CENTRE") {
+        if (position.toString().equals("CENTRE")) {
             center(output, getWidth());
         }
     }
@@ -82,7 +81,7 @@ public class Menu{
     }
 
     private void center(String output, int width){
-        System.out.println(String.format("%" + (width/2+ output.length()) + "s", output));
+        System.out.printf("%" + (width/2+ output.length()) + "s%n", output);
     }
 
     private void printLine(String sign){
